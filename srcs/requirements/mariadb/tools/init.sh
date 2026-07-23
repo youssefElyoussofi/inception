@@ -12,12 +12,8 @@ GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USER}';
 ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASS}';
 FLUSH PRIVILEGES;
 EOF
-
     mysqladmin -u root --password="${DB_ROOT_PASS}" shutdown
 fi
 
-echo "Launching MariaDB for production..."
-
 service mariadb stop
 exec mariadbd
-#exec mysqld_safe

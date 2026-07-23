@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
-COPY ./tools/generate_ssl.sh /generate_ssl.sh
-RUN chmod +x /generate_ssl.sh
+COPY ./tools/init.sh /init.sh
+RUN chmod +x /init.sh
 
-ENTRYPOINT ["/generate_ssl.sh"]
+ENTRYPOINT ["/init.sh"]

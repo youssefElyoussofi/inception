@@ -16,8 +16,4 @@ if [ ! -f /var/www/html/wp-config.php ]; then
     wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass="$WP_USER_PASS" --allow-root
 fi
 
-# Set permissions
-#chown -R www-data:www-data /var/www/html
-#chmod -R 755 /var/www/html
-
 exec /usr/sbin/php-fpm8.2 -F
